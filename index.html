@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café & Delicias</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Café y Delicias</h1>
+        <nav class="category-nav">
+            <button class="category-btn active" data-category="starters">
+                <i class="fas fa-cookie"></i> Entradas
+            </button>
+            <button class="category-btn" data-category="main">
+                <i class="fas fa-bread-slice"></i> Platos principales
+            </button>
+            <button class="category-btn" data-category="drinks">
+                <i class="fas fa-mug-hot"></i> Bebidas
+            </button>
+            <button class="category-btn" data-category="desserts">
+              <i class="fas fa-ice-cream"></i> Postres
+            </button>
+        </nav>
+        <div class="header-actions">
+            <a href="auth.html" class="auth-link">
+                <i class="fas fa-user"></i> Iniciar Sesión
+            </a>
+            <button class="cart-toggle" aria-label="Ver carrito">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Bienvenido a nuestra deliciosa experiencia culinaria</h2>
+            <p>Descubre sabores únicos en cada plato</p>
+        </section>
+
+        <section class="menu-section" id="menu">
+            <!-- El menú se cargará dinámicamente aquí -->
+            <p class="loading">Cargando menú...</p>
+        </section>
+
+        <section class="team-section" id="team">
+            <h2>Nuestro Equipo</h2>
+            <div class="team-grid">
+                <!-- El equipo se cargará dinámicamente aquí -->
+            </div>
+        </section>
+    </main>
+
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <h2>Tu Carrito</h2>
+            <button class="close-cart" aria-label="Cerrar carrito">&times;</button>
+            <div class="cart-items">
+                <!-- Los items del carrito se cargarán dinámicamente aquí -->
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Realizar Pedido</button>
+        </div>
+    </div>
+    
+    <div class="checkout-form" id="checkoutForm">
+      <form id="orderForm">
+        <h2>Información de Contacto</h2>
+        <div class="form-group">
+          <label for="customerName">Nombre</label>
+          <input type="text" id="customerName" required>
+        </div>
+        <div class="form-group">
+          <label for="customerPhone">Teléfono</label>
+          <input type="tel" id="customerPhone" required>
+        </div>
+        <div class="form-group">
+          <label for="customerAddress">Dirección</label>
+          <textarea id="customerAddress" required></textarea>
+        </div>
+        <div class="form-summary">
+          <h3>Resumen del Pedido</h3>
+          <div id="orderSummary"></div>
+          <div class="order-total">
+            <span>Total:</span>
+            <span id="orderTotalSummary">$0.00</span>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" id="cancelOrder">Cancelar</button>
+          <button type="submit" id="confirmOrder">Confirmar Pedido</button>
+        </div>
+      </form>
+    </div>
+    
+    <script type="module" src="js/main.js"></script>
+    <!-- Nota: Se han eliminado las referencias a Supabase -->
+</body>
+</html>

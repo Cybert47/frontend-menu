@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Café & Delicias</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="admin-header">
+        <h1>Panel de Administración</h1>
+        <div class="admin-header-actions">
+            <a href="index.html" class="back-to-site">
+                <i class="fas fa-home"></i> Volver al sitio
+            </a>
+            <div id="userInfo" style="display: none;">
+                <span id="userName"></span>
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <div class="admin-container">
+            <h2>Gestión de Pedidos</h2>
+            
+            <div class="filters-container">
+                <div class="status-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="pending">Pendientes</button>
+                    <button class="filter-btn" data-filter="completed">Atendidos</button>
+                </div>
+                <div class="customer-filter">
+                    <input type="text" id="customerFilter" placeholder="Buscar por cliente...">
+                </div>
+            </div>
+            
+            <div id="ordersList" class="orders-list">
+                <!-- Los pedidos se cargarán dinámicamente aquí -->
+                <p class="loading">Cargando pedidos...</p>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="./js/admin.js"></script>
+    <!-- Nota: Se han eliminado las referencias a Supabase, ahora usando solo API REST -->
+</body>
+</html>

@@ -1,0 +1,501 @@
+/* Estilos para el panel de administración */
+
+/* Variables */
+:root {
+    --admin-primary: #2c1810;
+    --admin-secondary: #c8a97e;
+    --admin-bg: #f8f9fa;
+    --admin-card: #ffffff;
+    --admin-text: #333333;
+    --admin-border: #e0e0e0;
+    --admin-success: #28a745;
+    --admin-warning: #ffc107;
+    --admin-danger: #dc3545;
+    --admin-info: #17a2b8;
+    --admin-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --admin-transition: all 0.3s ease;
+  }
+  
+  body {
+    background-color: var(--admin-bg);
+  }
+  
+  /* Header de administración */
+  .admin-header {
+    background-color: var(--admin-primary);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .admin-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .back-to-site {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--admin-transition);
+  }
+  
+  .back-to-site:hover {
+    color: var(--admin-secondary);
+  }
+  
+  #userInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  #userName {
+    color: var(--admin-secondary);
+    font-weight: 500;
+  }
+  
+  .logout-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--admin-transition);
+  }
+  
+  .logout-btn:hover {
+    color: var(--admin-secondary);
+  }
+  
+  /* Contenedor principal */
+  .admin-main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Sección de autenticación */
+  .auth-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+  }
+  
+  .auth-container {
+    background-color: var(--admin-card);
+    border-radius: 8px;
+    box-shadow: var(--admin-shadow);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .auth-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--admin-primary);
+  }
+  
+  .login-form .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .login-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--admin-border);
+    border-radius: 4px;
+    font-family: inherit;
+    transition: var(--admin-transition);
+  }
+  
+  .login-form input:focus {
+    outline: none;
+    border-color: var(--admin-secondary);
+    box-shadow: 0 0 0 2px rgba(200, 169, 126, 0.2);
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--admin-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--admin-transition);
+  }
+  
+  .login-btn:hover {
+    background-color: var(--admin-secondary);
+  }
+  
+  /* Sección de administración */
+  .admin-section {
+    margin-top: 1rem;
+  }
+  
+  .admin-container {
+    background-color: var(--admin-card);
+    border-radius: 8px;
+    box-shadow: var(--admin-shadow);
+    padding: 2rem;
+  }
+  
+  .admin-container h2 {
+    margin-bottom: 1.5rem;
+    color: var(--admin-primary);
+  }
+  
+  /* Filtros */
+  .filters-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .status-filters {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .filter-btn {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--admin-transition);
+  }
+  
+  .filter-btn.active {
+    background-color: var(--admin-secondary);
+    color: white;
+  }
+  
+  .customer-filter input {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--admin-border);
+    border-radius: 4px;
+    width: 250px;
+    transition: var(--admin-transition);
+  }
+  
+  .customer-filter input:focus {
+    outline: none;
+    border-color: var(--admin-secondary);
+    box-shadow: 0 0 0 2px rgba(200, 169, 126, 0.1);
+  }
+  
+  /* Lista de pedidos */
+  .orders-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .order-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: var(--admin-transition);
+    border-left: 4px solid var(--admin-warning);
+  }
+  
+  .order-card.completed {
+    border-left-color: var(--admin-success);
+  }
+  
+  .order-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .order-header {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .order-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  
+  .order-status {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  
+  .order-status.pending {
+    background-color: var(--admin-warning);
+    color: #856404;
+  }
+  
+  .order-status.completed {
+    background-color: var(--admin-success);
+    color: white;
+  }
+  
+  .order-info {
+    padding: 1rem;
+  }
+  
+  .order-info p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .order-actions {
+    padding: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .view-details-btn,
+  .complete-order-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--admin-transition);
+  }
+  
+  .view-details-btn {
+    background-color: var(--admin-info);
+    color: white;
+    flex: 1;
+  }
+  
+  .complete-order-btn {
+    background-color: var(--admin-success);
+    color: white;
+    flex: 1;
+  }
+  
+  .view-details-btn:hover {
+    background-color: #138496;
+  }
+  
+  .complete-order-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Modal de detalles de pedido */
+  .order-details-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--admin-transition);
+  }
+  
+  .order-details-modal.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .order-details-content {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2rem;
+    position: relative;
+    transform: translateY(20px);
+    transition: var(--admin-transition);
+  }
+  
+  .order-details-modal.active .order-details-content {
+    transform: translateY(0);
+  }
+  
+  .close-details {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--admin-text);
+    transition: var(--admin-transition);
+  }
+  
+  .close-details:hover {
+    color: var(--admin-danger);
+    transform: rotate(90deg);
+  }
+  
+  .order-details-content h2 {
+    margin-bottom: 1.5rem;
+    color: var(--admin-primary);
+  }
+  
+  .order-customer-info,
+  .order-items {
+    margin-bottom: 2rem;
+  }
+  
+  .order-customer-info h3,
+  .order-items h3 {
+    margin-bottom: 1rem;
+    color: var(--admin-secondary);
+    font-size: 1.2rem;
+  }
+  
+  .order-items table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .order-items th,
+  .order-items td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--admin-border);
+  }
+  
+  .order-items th {
+    background-color: #f9f9f9;
+    font-weight: 500;
+  }
+  
+  .order-items tfoot td {
+    font-weight: 600;
+  }
+  
+  /* Mensajes de estado */
+  .loading,
+  .error,
+  .info {
+    padding: 2rem;
+    text-align: center;
+    grid-column: 1 / -1;
+  }
+  
+  .loading {
+    color: var(--admin-text);
+  }
+  
+  .error {
+    color: var(--admin-danger);
+  }
+  
+  .info {
+    color: var(--admin-info);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .admin-header {
+      flex-direction: column;
+      padding: 1rem;
+      text-align: center;
+    }
+  
+    .admin-header-actions {
+      margin-top: 1rem;
+    }
+  
+    .admin-main {
+      padding: 1rem;
+    }
+  
+    .filters-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .customer-filter input {
+      width: 100%;
+    }
+  
+    .orders-list {
+      grid-template-columns: 1fr;
+    }
+  
+    .order-details-content {
+      padding: 1.5rem;
+      width: 95%;
+    }
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .order-card {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+  
+  /* Enlace a admin en el header principal */
+  .admin-link {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--admin-transition);
+    margin-right: 1rem;
+  }
+  
+  .admin-link:hover {
+    color: var(--admin-secondary);
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+  }
+  
