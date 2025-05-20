@@ -2,7 +2,7 @@
 // Este archivo centraliza la configuración de la API para toda la aplicación
 
 // URL base de la API - Cambia esto según tu configuración
-const API_BASE_URL = "https://backend-menu-uhk6.onrender.com/"
+const API_BASE_URL = "https://backend-menu-5aw2.onrender.com/"
 
 // Endpoints de la API
 const API_ENDPOINTS = {
